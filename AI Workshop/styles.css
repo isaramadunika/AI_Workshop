@@ -1,0 +1,440 @@
+/* ========================================
+   LUMINO AI WORKSHOP - APPLE-STYLE MINIMAL UI
+   Clean, Professional, User-Friendly Design
+   Custom Color Palette: #fef7e8, #c5362f, #000000
+   ======================================== */
+
+/* ========== Color System ========== */
+:root {
+    /* Brand Colors */
+    --cream: #fef7e8;
+    --cream-dark: #f5e8d0;
+    --red: #c5362f;
+    --red-hover: #d45349;
+    --black: #000000;
+
+    /* Neutrals */
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-500: #737373;
+    --gray-700: #404040;
+    --gray-900: #1a1a1a;
+    --white: #ffffff;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.12);
+    --shadow-red: 0 4px 16px rgba(197, 54, 47, 0.25);
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+
+    /* Radius */
+    --radius: 12px;
+    --radius-lg: 18px;
+    --radius-full: 9999px;
+
+    /* Typography */
+    --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ========== Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font);
+    line-height: 1.6;
+    color: var(--gray-900);
+    background: var(--cream);
+    overflow-x: hidden;
+}
+
+/* ========== Apple-Style Navigation ========== */
+.top-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 max(1rem, calc(50% - 600px));
+}
+
+.top-nav-logo {
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+.top-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.top-nav-menu a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    transition: var(--transition);
+}
+
+.top-nav-menu a:hover {
+    color: var(--gray-900);
+}
+
+.top-nav-menu a.active {
+    color: var(--red);
+    font-weight: 500;
+}
+
+.top-nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-nav-icon {
+    color: var(--gray-700);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.top-nav-icon:hover {
+    color: var(--gray-900);
+}
+
+/* ========== Container ========== */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: var(--white);
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--cream);
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(197, 54, 47, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+}
+
+.hero-logo {
+    max-width: 100px;
+    margin: 0 auto var(--space-md);
+    display: block;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.03em;
+}
+
+.hero h1 .accent {
+    color: var(--red);
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--gray-700);
+    max-width: 700px;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========== Buttons ========== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    letter-spacing: -0.01em;
+}
+
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: var(--shadow-red);
+}
+
+.btn-primary:hover {
+    background: var(--red-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 54, 47, 0.35);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.btn-secondary:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+/* ========== Content Section ========== */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md);
+}
+
+.section {
+    margin-bottom: var(--space-2xl);
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* ========== Card Grid ========== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ========== Cards ========== */
+.tool-card,
+.resource-item,
+.prompt-card,
+.activity-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before,
+.resource-item::before,
+.prompt-card::before,
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover,
+.resource-item:hover,
+.prompt-card:hover,
+.activity-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gray-300);
+}
+
+.tool-card:hover::before,
+.resource-item:hover::before,
+.prompt-card:hover::before,
+.activity-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tool-link,
+.resource-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    display: block;
+    margin-bottom: var(--space-xs);
+    transition: var(--transition);
+    letter-spacing: -0.01em;
+}
+
+.tool-link:hover,
+.resource-link:hover {
+    color: var(--red);
+}
+
+.tool-url,
+.resource-url {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    font-family: 'SF Mono', 'Monaco', monospace;
+    margin-top: var(--space-xs);
+}
+
+.tool-description,
+.resource-description {
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: var(--space-xs);
+}
+
+/* ========== Copy Button ========== */
+.copy-btn,
+.filter-btn {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: var(--space-sm);
+}
+
+.copy-btn:hover {
+    background: var(--red-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-red);
+}
+
+.filter-btn {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    margin-right: var(--space-xs);
+}
+
+.filter-btn:hover {
+    background: var(--gray-200);
+}
+
+.filter-btn.active {
+    background: var(--red);
+    color: var(--white);
+}
+
+/* ========== Footer ========== */
+.footer {
+    background: var(--gray-900);
+    color: var(--gray-500);
+    text-align: center;
+    padding: var(--space-xl);
+    border-top: 1px solid var(--gray-800);
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 0 1rem;
+    }
+
+    .top-nav-menu {
+        gap: 1rem;
+    }
+
+    .top-nav-menu a {
+        font-size: 0.7rem;
+    }
+
+    .top-nav-logo {
+        height: 28px;
+    }
+
+    .hero {
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .content {
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tool-card,
+.resource-item {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ========== Utility Classes ========== */
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
