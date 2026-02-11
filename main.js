@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ========== Smooth Scroll Animations ==========
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 1.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
